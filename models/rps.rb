@@ -8,34 +8,22 @@ class Game
   end
 
   def play_game
-# p player1
-# p player2
 
-    if (@player1 == "rock" && @player2 == "scissors")
-      result = "rock wins for player 1"
+    if (@player1 == "rock" && @player2 == "scissors") ||
+      (@player1 == "scissors" && @player2 == "paper") ||
+      (@player1 == "paper" && @player2 == "rock")
+      winning_player = "player 1"
+      winning_item = player1
     end
 
-    if (@player1 == "scissors" && @player2 == "paper")
-      result = "scissors wins for player 1"
+    if (@player2 == "rock" && @player1 == "scissors") ||
+      (@player2 == "scissors" && @player1 == "paper") ||
+      (@player2 == "paper" && @player1 == "rock")
+      winning_player = "player 2"
+      winning_item = player2
     end
 
-    if (@player1 == "paper" && @player2 == "rock")
-      result = "paper wins for player 1"
-    end
-
-    if (@player2 == "rock" && @player1 == "scissors")
-      result = "rock wins for player 2"
-    end
-
-    if (@player2 == "scissors" && @player1 == "paper")
-      result = "scissors wins for player 2"
-    end
-
-    if (@player2 == "paper" && @player1 == "rock")
-      result = "paper wins for player 2"
-    end
-
-    return result
+    return "#{winning_item} wins for #{winning_player}"
 
   end
 
