@@ -12,6 +12,7 @@ class TestRps < Minitest::Test
     @game4 = Game.new("rock", "paper")
     @game5 = Game.new("scissors", "rock")
     @game6 = Game.new("paper", "scissors")
+    @game7 = Game.new("rock", "rock") # added during review
   end
 
   def test_rock_beats_scissors()
@@ -27,6 +28,11 @@ class TestRps < Minitest::Test
   def test_scissors_beats_paper()
     assert_equal("scissors wins for player 1", @game3.play_game())
     assert_equal("scissors wins for player 2", @game6.play_game())
+  end
+
+  # added during review
+  def test_game_is_drawn
+    assert_equal("Game is drawn", @game7.play_game())
   end
 
 end
